@@ -1,0 +1,716 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*------RESET----*/
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('fonts/BrandonGrotesque-Bold.eot');
+    src: url('fonts/BrandonGrotesque-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BrandonGrotesque-Bold.woff2') format('woff2'),
+        url('fonts/BrandonGrotesque-Bold.woff') format('woff'),
+        url('fonts/BrandonGrotesque-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Azo Sans';
+    src: url('fonts/AzoSans-Regular.eot');
+    src: url('fonts/AzoSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/AzoSans-Regular.woff2') format('woff2'),
+        url('fonts/AzoSans-Regular.woff') format('woff'),
+        url('fonts/AzoSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    
+*   {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body    {
+    margin: 0;
+    padding: 0; 
+    background-color: #F2F2F2;
+    font-family: 'Azo Sans';
+    letter-spacing: 1px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #7D7E7E;
+}
+
+h2  {
+    font-family: 'Brandon Grotesque';
+}
+
+.content-center {
+    max-width: 1760px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*------LOADER----*/
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    margin: -75px 0 0 -75px;
+    border: 10px solid #F2F2F2;
+    border-radius: 50%;
+    border-top: 10px solid #F2F2F2;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1.5s ease-in-out infinite, out 0s 0s;
+    animation-fill-mode: forwards;
+  }
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); border-color: green; }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); border-top: 0px solid #F2F2F2; }
+    40% { transform: rotate(360deg); border-top: 10px solid red;}
+    100% { transform: rotate(720deg); border-top: 0px solid #F2F2F2;}
+}
+
+@keyframes out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/*------TOPHEADER----*/
+
+.topheader  {
+    width: 100%;
+    background-image: url(./images/topheader.png);
+    background-size: cover;
+    color: #fff;
+    margin-top: 80px;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.24);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    position: relative;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+.topheader-wrapper      {
+    position: relative;
+    width: 100%;
+    z-index: 20;
+    font-family: 'Brandon Grotesque';
+    text-transform: uppercase;
+    display: flex; 
+    align-items: center; 
+    height: 100px;
+}
+
+.progress-bar   {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.14);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    position: absolute;
+    z-index: 10;
+}
+
+.logo   {
+    display: inline-block;
+    padding-right: 50px;
+}
+
+.logo img   {
+    width: 60px;
+}
+
+.title-dia  {
+    display: inline-block;
+    margin: 0 auto;
+    flex: 1;  
+    letter-spacing: 6px;
+}
+
+.date   {
+    display: inline-block;
+}
+
+.time   {
+    display: inline-block;
+    padding-left: 50px;
+    min-width: 125px;
+}
+
+/*------CONTENT-COLUMS---*/
+
+.content-section    {
+    display: flex;
+    position: relative;
+    margin: 90px auto 30px;
+    justify-content: space-between;
+}
+
+.col    {
+    width: 30%;
+    position: relative;
+    
+}
+
+.col-title  {
+    color: red;
+    text-align: center;
+    padding: 0px 30px;
+}
+
+/*------------------------------NEWS/ACTUALITEIT---------------------------*/
+
+.news-item  {
+    width: 100%;
+    height: auto;
+    min-height: 850px;
+    background: #fff;
+    border: 1px solid #CCCCCC;
+    border-radius: 30px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+}
+.news-image {
+    margin: 0 auto;
+    text-align: center;
+    height: 310px;
+    margin-bottom: 30px;
+}
+
+.news-image img  {
+    width: 100%;
+    object-fit: cover;
+    max-height: 100%;
+    position: relative;
+    border-radius: 30px 30px 0px 0px; 
+}
+
+.sourse-logo    {
+    width: 50px;
+    margin: -40px auto 0px;
+}
+
+.sourse-logo img    {
+    border-radius: 0px;
+}
+
+.news-title {
+    
+    font-family: 'Brandon Grotesque';
+    padding-bottom: 25px;
+    color: #000;
+}
+
+
+
+.news-description   {
+    padding: 0px 40px 40px;
+}
+
+.news-description p     {
+    color: #7D7E7E;
+}
+
+#category {
+
+    color:rgb(255, 118, 118);
+    margin-top: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+/*------------------------------------PROJECTEN-----------------------------------------*/
+
+.wrapper  {
+    background: #fff;
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+   
+}
+
+.project-header {
+    text-align: left;
+}
+
+.team-member-photo  {
+    display: inline-block;
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.working-on {
+    display: inline-block;
+    padding-left: 0px;
+    color: #000;
+}
+
+    .team-member-photo img  {
+        width: 100%;
+    }
+
+.team-member-name   {
+    color: red;
+    display: inline-block;
+}
+
+.project-block  {
+    padding: 20px 30px;
+    border: 1px solid #CCCCCC;
+    border-radius: 50px;
+    display: flex;
+    margin-top: 15px;
+}
+
+.project-icon   {
+    display: inline-block;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.project-icon img   {
+    width: 100%;
+}
+
+.project-name  {
+    display: inline-block;
+    flex: 1; 
+    color: #7D7E7E;
+}
+
+.project-time   {
+    display: inline-block;
+    color: #7D7E7E;
+}
+
+.agenda-title   {
+    color: red;
+}
+
+/*-----------------AGENDA-------------------------------------*/
+.wrapper.agenda {
+    height: 470px;
+}
+
+ul.agenda   {
+    padding: 30px 0px;
+    list-style: none;
+    color: #7D7E7E;
+} 
+
+    ul.agenda li {
+        padding: 10px 0px;
+        display: block;
+        width: 100%;
+        display: flex;
+    }
+
+    .agenda-event-date  {
+        display: inline-block;
+        padding-right: 30px;
+        flex: 1;
+        color: #000;
+    }
+
+/*-------------------------------------STATUS------------------------------------*/
+
+.status.wrapper    {
+    height: 100%;
+    position: relative;
+}
+
+.status-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    vertical-align: middle;
+    float: left;
+}
+
+    .status-icon span   {
+        position: absolute;
+        top: -10px;
+        right: -15px;
+        background: red;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+.github li, .support-ticket li, .pingping li    {
+    color: #7D7E7E;
+    padding: 30px 0px;
+    border-bottom: 1px solid #7D7E7E;
+    width: 100%;
+    position: relative;
+    list-style: none;
+}
+
+    .github-pull-profile-photo     {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+    }
+
+        .github-pull-profile-photo img {
+            width: 100%;
+        }
+
+    .github-pull-request-name  {
+        display: inline-block;
+        width: 90%;
+        position: absolute;
+        padding: 0px 30px;
+    }
+
+.support-tickets-subject    {
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 20px;
+}
+
+.pingping-status    {
+    display: inline-block;
+    padding: 15px 45px 0px 10px;
+}
+
+.pingping-status-circle     {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red;
+    display: block;
+}
+
+.pingping-name  {
+    display: inline-block;
+    width: 90%;
+    position: absolute;
+}
+
+/*---------------------------------BEZOEKERS------------------------------------*/
+
+.views  {
+    text-align: center;
+    padding: 30px;
+}
+
+.graph  {
+    width: 100%;
+    text-align: center;
+}
+
+.graph img {
+    width: 80%;
+}
+
+ul.social-media   {
+    list-style: none;
+    padding: 30px 0px 0px;
+    text-align: center;
+}
+
+li.social-media   {
+    display: inline-block;
+    width: 90px;
+    text-align: center;
+}
+
+.social-media-icon  {
+    display: block;
+    width: 60px;
+    margin: 0 auto;
+}
+
+.social-media-icon img  {
+   width: 100%;
+ }
+
+ .social-activity {
+     padding: 10px 0px;
+ }
+
+ ol.most-viewed, ol.from {
+    padding: 10px 60px;
+    margin: 0 auto;
+ }  
+ 
+ ol.most-viewed li, ol.from li    {
+    padding: 15px 25px;
+ }
+
+/*--------------------------------ALGEMEEN-----------------------------------*/
+
+.topscore-profile   {
+    margin: 30px 0px;
+    position: relative;
+    text-align: center;
+}
+
+    .topscore-profile img   {
+        width: 170px;
+    }
+
+    .topscore-icon  {
+        position: absolute;
+        top: 0px;
+        right: 103px;
+    }
+
+    .topscore-icon img  {
+        width: 90px;
+    }
+
+    .score  {
+        text-align: center;
+    }
+
+    table   {
+        line-height: 2.0;
+        margin: 0 auto;
+    }
+
+    tr.number-one   {
+        font-weight: bold;
+        color: red;
+    }
+
+    td.name {
+        min-width: 300px;
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .wheather-now   {
+        text-align: center;
+    }
+    
+    .wheater-current-wrapper    {
+        padding: 25px 0px;    
+    }
+    
+    .wheather-icon      {
+        display: inline-block;
+        color: red;
+        padding-right: 20px;
+        font-size: 100px;
+    }
+    
+    .wheater-celcius    {
+        text-align: center;
+        color: red;
+        font-weight: bold;
+        display: inline-block;
+        font-size: 70px;
+    }
+    
+    .wheater-place  {
+        
+    }
+    
+    .wheater-overview   {
+        padding: 40px 0px;
+    }
+    
+    tr.wheater-overview   {
+        padding: 45px 0px 33px;
+    }
+    
+    .wheater-overview-icon  {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+    .wheater-place  {
+        text-align: center;
+    }
+
+th.day  {
+    width: 130px;
+    text-align: center;
+}
+
+td.degree   {
+    width: 130px;
+    text-align: center;
+}
+
+.wrapper.music  {
+    background: #1A1A1A;
+    color: #fff;
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+    .music-info {
+        line-height: 2;
+    }
+
+    .song-name  {
+        font-weight: bold;
+    }
+
+    .album-cover    {
+        width: 100%;
+        height: 466px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 30px 0px;
+    }
+
+    .album-cover  img   {
+        width: 100%;
+    }
+
+    .sonos-logo {
+        width: 80px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .sonos-logo img {
+        width: 80%;
+    }
+
+
+    @media only screen and (max-width: 768px) {
+        .col {
+          width: 100%;
+          display: block;
+        }
+
+        .content-section    {
+            display: block;
+        }
+      }
+
+/*-------ANIMATIE------------*/
+
+.animate {
+    animation-name: progress-bar;
+    animation-duration: 8s;
+    animation-timing-function: ease-out;
+    box-shadow: inset -50px 0 45px -50px rgba(0, 0, 0, 0.15);
+}
+
+.animateBack {
+    animation-name: progress-bar-back;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    box-shadow: inset -50px 0 45px -50px rgba(0, 0, 0, 0.15);
+} 
+
+@keyframes progress-bar {
+    0% {width: 0%; opacity:0;}
+    100% {width: 100%;}
+}
+
+@keyframes progress-bar-back {
+    0% {width: 100%;}
+    45% {opacity: 0;}
+    100% {width: 0%; opacity: 0;}
+}
+
+.animate-in {
+    animation-name: animate-in;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+}
+
+.animate-out {
+    animation-name: animate-out;
+    animation-duration: 0.25s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}   
+
+@keyframes animate-in {
+    0% {left: -10px; opacity: 0;}
+    100% {left: 0; opacity: 1;}
+}
+
+@keyframes animate-out {
+    0% {left: 0px; opacity: 1;}
+    100% {left: 10px; opacity: 0;}
+}
+
+.start-up-animation {
+    opacity: 0;
+    animation-name: app-startup;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+}
+
+@keyframes app-startup {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
